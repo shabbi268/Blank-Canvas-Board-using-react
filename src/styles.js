@@ -98,6 +98,23 @@ const styles = {
         border: 'none',
         boxShadow: `0 1px 2px 0 ${applyOpacityToHex(greyScale[0], 0.3)}`,
     },
+    myNewButton: {
+        height: 32,
+        margin: '6px 4px',
+        padding: '0 16px',
+        textTransform: 'uppercase',
+        borderRadius: 16,
+        fontSize: '.875rem',
+        fontWeight: 500,
+        lineHeight: 1.75,
+        letterSpacing: '.02857em',
+        outline: 'none',
+        cursor: 'pointer',
+        backgroundColor: '#2c6ba1', //  #2c6ba1
+        color: '#ffffff',
+        border: 'none',
+        boxShadow: `0 1px 2px 0 ${applyOpacityToHex(greyScale[0], 0.3)}`,
+    },
     column: {
         width: '100%',
         margin: '12px 0 36px',

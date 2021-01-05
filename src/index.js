@@ -1,6 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 import styles from './styles.js';
+import { Button } from 'react-bootstrap';
 
 
 const sizeEnum = {
@@ -70,7 +71,7 @@ function ReactRoot(){
                     onClick={clearCanvas}
                     style={styles.button}
                 >
-                    Reset Canvas
+                    Reset Canvas Board
                 </button>
                 <div style={{...styles.canvasWrapper, width: width + 2, height: height + 2 }}>
                     <div
@@ -116,23 +117,27 @@ function ReactRoot(){
                     >
                         Star
                     </button>
-                    {/*
-                    // ================================================================================
-                    //                      Maybe things should go here?
-                    // ================================================================================
-                    */}
+                    <Button onClick={() => {console.log('Square OBJECT'); turtle.square();}}
+                        style={styles.myNewButton}>SQUARE</Button>
                     <button
-                        onClick={() => console.log('yo')}
-                        style={styles.blueButton}
+                        onClick={() => {console.log('Triangle OBJECT'); turtle.triangle();}}
+                        style={styles.myNewButton}
                     >
-                        Custom ???
+                        Triangle
                     </button>
                     <button
                         onClick={() => console.log('NEW CUSTOM TEST OBJECT')}
-                        style={styles.blueButton}
+                        style={styles.myNewButton}
                     >
                         Custom TEST
                     </button>
+                    <button
+                        onClick={() => console.log('yo')}
+                        style={styles.myNewButton}
+                    >
+                        Custom ???
+                    </button>
+                    
                 </div>
             </div>
         </div>
@@ -160,6 +165,8 @@ if (canvas && canvas.getContext) { // does the browser support 'canvas'?
 }
 
 function clearCanvas () {
+    console.log('You are about to clear your work');
+    alert('You are about to clear your work');
     if (canvas && canvas.getContext) {
         const context = canvas.getContext("2d");
         context.clearRect(0, 0, canvas.width, canvas.height);
@@ -254,6 +261,26 @@ turtle.hexagon = function (length=50) {
     for (i = 1; i <= 6; i++) {
         turtle.forward(length);
         turtle.left(60);
+
+    }
+};
+
+turtle.square = function (length=50) {
+    console.log('length', length);
+    var i;
+    for (i = 1; i <= 4; i++) {
+        turtle.forward(length);
+        turtle.left(90);
+
+    }
+};
+
+turtle.triangle = function (length=50) {
+    console.log('length', length);
+    var i;
+    for (i = 1; i <= 3; i++) {
+        turtle.forward(length);
+        turtle.left(120);
 
     }
 };
