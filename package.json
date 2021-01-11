@@ -1,11 +1,7 @@
 {
-  "name": "internship-code-box",
+  "name": "Canvas Board",
   "version": "1.0.0",
   "description": "A canvas for creativity",
-  "repository": {
-    "type": "git",
-    "url": "https://bitbucket.org/cshamilton/internship-sandbox/src/master/"
-  },
   "scripts": {
     "start": "webpack-dev-server --open --mode development",
     "build": "webpack --mode production",
